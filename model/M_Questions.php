@@ -11,13 +11,7 @@ class getquestion{
          $stmt = $db->prepare($sql);
          $stmt->bindValue(":person_id", $evaluationId);
          $ok = $stmt->execute();
-
          $data = array();
-
-
-
-
-        // $result = null;
          if ($ok) {
            while ($row_user = $stmt->fetch(PDO::FETCH_ASSOC)){
                $data[] = $row_user;
