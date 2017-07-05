@@ -6,13 +6,14 @@ require_once("../model/M_updateAnswer.php");
   session_start();
       $qid = $_POST["qid"];
       $qry=$_POST["qry"];
-
+     $data=null;
 
 
       if (1 == updateAnswer::insert($qry,$qid)) {
-
+        $data=1;
+        echo $data;
       }
       else {
-        $data ="error";
+        $data =0;
         echo $data;
       }

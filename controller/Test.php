@@ -16,7 +16,7 @@ class TestResource extends HttpResource {
 		$data = array();
 		//die($this->user['id'].' '. $this->evaluationId);
 		if (1 == TestModel::insert($this->user['id'], $this->evaluationId)) {
-      require_once("../view/V_test.php");
+      require_once("../view/V_test.html");
 		}
 		else {
 		  require_once("../view/notFound.php");

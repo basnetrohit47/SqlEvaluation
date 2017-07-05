@@ -9,8 +9,8 @@ var myarray = {};
 function codeAddress() {
 
   //Time Counter
-  var count = 10;
-  var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+  var count = 60;
+  var counter = setInterval(timer, 10000); //1000 will  run it every 1 second
   function timer() {
     count = count - 1;
     if (count <= 0) {
@@ -60,7 +60,7 @@ function final() {
     type: "POST",
     url: "../controller/Ctrl_finalize.php",
     success: function(data) {
-      window.location.href = '../controller/evaluation.php';
+       window.location.href = '../controller/evaluation.php';
     }
   });
 
@@ -96,7 +96,12 @@ $(document).ready(function() {
         qid: saveid
       },
       success: function(data) {
-        $('#quest').html(data);
+        if(data==0){
+
+            window.location.href = '../controller/evaluation.php';
+        }
+
+        //$('#quest').html(data);
 
         $(".btn").addClass('btn-info');
 
